@@ -1,10 +1,10 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>35b61fef-6fee-40c7-a9d0-a722b667021e</ProjectGuid>
+    <ProjectGuid>{35B61FEF-6FEE-40C7-A9D0-A722B667021E}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>ShopOnline.Data</RootNamespace>
@@ -31,24 +31,86 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="System"/>
-    
-    <Reference Include="System.Core"/>
-    <Reference Include="System.Xml.Linq"/>
-    <Reference Include="System.Data.DataSetExtensions"/>
-    
-    
-    <Reference Include="Microsoft.CSharp"/>
-    
-    <Reference Include="System.Data"/>
-    
-    <Reference Include="System.Net.Http"/>
-    
-    <Reference Include="System.Xml"/>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="Entities\Advertistment.cs" />
+    <Compile Include="Entities\AdvertistmentPage.cs" />
+    <Compile Include="Entities\AdvertistmentPosition.cs" />
+    <Compile Include="Entities\Announcement.cs" />
+    <Compile Include="Entities\AnnouncementUser.cs" />
+    <Compile Include="Entities\Bill.cs" />
+    <Compile Include="Entities\BillDetail.cs" />
+    <Compile Include="Entities\Blog.cs" />
+    <Compile Include="Entities\BlogTag.cs" />
+    <Compile Include="Entities\Color.cs" />
+    <Compile Include="Entities\Contact.cs" />
+    <Compile Include="Entities\Feedback.cs" />
+    <Compile Include="Entities\Footer.cs" />
+    <Compile Include="Entities\Function.cs" />
+    <Compile Include="Entities\Language.cs" />
+    <Compile Include="Entities\Page.cs" />
+    <Compile Include="Entities\Permission.cs" />
+    <Compile Include="Entities\Product.cs" />
+    <Compile Include="Entities\ProductCategory.cs" />
+    <Compile Include="Entities\ProductImage.cs" />
+    <Compile Include="Entities\ProductQuantity.cs" />
+    <Compile Include="Entities\ProductTag.cs" />
+    <Compile Include="Entities\Size.cs" />
+    <Compile Include="Entities\Slide.cs" />
+    <Compile Include="Entities\SystemConfig.cs" />
+    <Compile Include="Entities\Tag.cs" />
+    <Compile Include="Entities\WholePrice.cs" />
+    <Compile Include="Enums\BillStatus.cs" />
+    <Compile Include="Enums\PaymentMethod.cs" />
+    <Compile Include="Enums\Status.cs" />
+    <Compile Include="Interfaces\IDateTracking.cs" />
+    <Compile Include="Interfaces\IHasOwner.cs" />
+    <Compile Include="Interfaces\IHasSeoMetaData.cs" />
+    <Compile Include="Interfaces\IHasSoftDelete.cs" />
+    <Compile Include="Interfaces\IMultiLanguage.cs" />
+    <Compile Include="Interfaces\ISortable.cs" />
+    <Compile Include="Interfaces\ISwitchable.cs" />
+    <Compile Include="IRepositories\IBillDetailRepository.cs" />
+    <Compile Include="IRepositories\IBillRepository.cs" />
+    <Compile Include="IRepositories\IBlogRepository.cs" />
+    <Compile Include="IRepositories\IBlogTagRepository.cs" />
+    <Compile Include="IRepositories\IColorRepository.cs" />
+    <Compile Include="IRepositories\IContactRepository.cs" />
+    <Compile Include="IRepositories\IFeedbackRepository.cs" />
+    <Compile Include="IRepositories\IFooterRepository.cs" />
+    <Compile Include="IRepositories\IFunctionRepository.cs" />
+    <Compile Include="IRepositories\IPageRepository.cs" />
+    <Compile Include="IRepositories\IPermissionRepository.cs" />
+    <Compile Include="IRepositories\IProductCategoryRepository.cs" />
+    <Compile Include="IRepositories\IProductImageRepository.cs" />
+    <Compile Include="IRepositories\IProductQuantityRepository.cs" />
+    <Compile Include="IRepositories\IProductRepository.cs" />
+    <Compile Include="IRepositories\IProductTagRepository.cs" />
+    <Compile Include="IRepositories\ISizeRepository.cs" />
+    <Compile Include="IRepositories\ISlideRepository.cs" />
+    <Compile Include="IRepositories\ISystemConfigRepository.cs" />
+    <Compile Include="IRepositories\ITagRepository.cs" />
+    <Compile Include="IRepositories\IWholePriceRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ShopOnline.Infrastructure\ShopOnline.Infrastructure.csproj">
+      <Project>{439c50d9-ba78-42ba-95a7-f0a810904462}</Project>
+      <Name>ShopOnline.Infrastructure</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="EntityFramework">
+      <Version>6.2.0</Version>
+    </PackageReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
- </Project>
+</Project>
